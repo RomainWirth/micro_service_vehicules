@@ -31,6 +31,7 @@ public class VehiculesController {
 
     @PutMapping("/{id}")
     public @ResponseBody Vehicule updateVehicule(@PathVariable int id, @RequestBody Vehicule vehicule) {
+        vehicule.setId(id);
         return vehiculeRepository.save(vehicule);
     }
 

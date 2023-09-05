@@ -1,16 +1,13 @@
 package com.vehicules.microservicevehicules.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
+    @Column(unique = true)
     private String registration;
     private String type;
     private String brand;
