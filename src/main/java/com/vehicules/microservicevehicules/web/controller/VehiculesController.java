@@ -5,8 +5,14 @@ import com.vehicules.microservicevehicules.repository.VehiculeRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.http.HttpEntity;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+//import org.springframework.web.client.RestTemplate;
 
+//import java.net.URI;
+//import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,5 +62,21 @@ public class VehiculesController {
     public Vehicule deleteVehicule(@PathVariable int id) {
         return vehiculeRepository.deleteById(id);
     }
+
+    @PostMapping("/available")
+    public List<Vehicule> findAvailableVehicules(List<Integer> reservedVehiculesIds) {
+//        List<Vehicule> vehicules = new ArrayList<>();
+//        for (int reservedVehiculeId: reservedVehiculesIds) {
+//            for (Vehicule vehicule: vehiculeRepository.findAll()) {
+//                if (reservedVehiculeId != vehicule.getId()) {
+//                    vehicules.add(vehicule);
+//                }
+//            }
+//        }
+//        return vehicules;
+        return vehiculeRepository.getAvailableVehicules(reservedVehiculesIds);
+    }
+
+
 
 }
