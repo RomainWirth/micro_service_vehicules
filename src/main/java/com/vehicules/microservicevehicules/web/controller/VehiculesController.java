@@ -58,7 +58,7 @@ public class VehiculesController {
     }
 
     @ApiOperation("Méthode pour supprimer un véhicule de la DB")
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public Vehicule deleteVehicule(@PathVariable int id) {
         return vehiculeRepository.deleteById(id);
     }
