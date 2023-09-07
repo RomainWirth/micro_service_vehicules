@@ -15,7 +15,7 @@ public interface VehiculeRepository extends JpaRepository<Vehicule, Integer> {
     Vehicule deleteById(int id);
     Vehicule save(Vehicule vehicule);
 
-    @Query(value = "SELECT v FROM Vehicule v WHERE v.id (:list)")
-    List<Vehicule> getAvailableVehicules(List<Integer> list);
+    @Query(value = "SELECT v FROM Vehicule v WHERE v.id NOT IN (:list)")
+    ArrayList<Vehicule> getAvailableVehicules(List<Integer> list);
 
 }

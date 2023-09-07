@@ -64,7 +64,7 @@ public class VehiculesController {
     }
 
     @PostMapping("/available")
-    public List<Vehicule> findAvailableVehicules(List<Integer> reservedVehiculesIds) {
+    public List<Vehicule> findAvailableVehicules(@RequestBody List<Integer> reservedVehiculesIds) {
 //        List<Vehicule> vehicules = new ArrayList<>();
 //        for (int reservedVehiculeId: reservedVehiculesIds) {
 //            for (Vehicule vehicule: vehiculeRepository.findAll()) {
