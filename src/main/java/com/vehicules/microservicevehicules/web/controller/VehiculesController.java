@@ -74,7 +74,11 @@ public class VehiculesController {
 //            }
 //        }
 //        return vehicules;
-        return vehiculeRepository.getAvailableVehicules(reservedVehiculesIds);
+        if (reservedVehiculesIds.isEmpty()) {
+            return vehiculeRepository.findAll();
+        } else {
+            return vehiculeRepository.getAvailableVehicules(reservedVehiculesIds);
+        }
     }
 
 
