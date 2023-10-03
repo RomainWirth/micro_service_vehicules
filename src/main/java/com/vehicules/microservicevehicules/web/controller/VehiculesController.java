@@ -19,6 +19,7 @@ import java.util.List;
 @RequestMapping("/vehicules")
 
 @Api("API pour les opérations CRUD sur les véhicules")
+@CrossOrigin
 @RestController
 public class VehiculesController {
     @Autowired
